@@ -1,4 +1,6 @@
 using Asp.Versioning;
+using Microsoft.EntityFrameworkCore;
+using ProjectManagement.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,11 @@ builder.Services.AddApiVersioning(options =>
 });
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddDbContext<PMSystemDbContext>(options =>
+{
+   options.UseNpgsql(builder.Configuration.GetConnectionString("PMSystemDatabase")); 
+});
 
 var app = builder.Build();
 
