@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 using ProjectManagement.API.Models;
 
-namespace ProjectManagement.API.Data.Configuration;
+namespace ProjectManagement.API.Infrastructure.Configuration;
 
 public class MemberConfiguration : IEntityTypeConfiguration<Member>
 {

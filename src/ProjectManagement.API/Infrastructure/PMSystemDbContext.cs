@@ -1,10 +1,11 @@
 using System.Reflection;
 
 using Microsoft.EntityFrameworkCore;
-using ProjectManagement.API.Data.Configuration;
+
+using ProjectManagement.API.Infrastructure.Configuration;
 using ProjectManagement.API.Models;
 
-namespace ProjectManagement.API.Data;
+namespace ProjectManagement.API.Infrastructure;
 
 public class PMSystemDbContext(DbContextOptions<PMSystemDbContext> options) : DbContext(options)
 {

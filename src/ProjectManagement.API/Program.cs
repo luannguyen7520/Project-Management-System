@@ -1,6 +1,8 @@
 using Asp.Versioning;
+
 using Microsoft.EntityFrameworkCore;
-using ProjectManagement.API.Data;
+
+using ProjectManagement.API.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
