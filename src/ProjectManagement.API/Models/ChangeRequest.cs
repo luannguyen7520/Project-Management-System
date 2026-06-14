@@ -1,13 +1,12 @@
-using System;
 using ProjectManagement.API.Models.Abstraction;
 
 namespace ProjectManagement.API.Models;
 
-public class ChangeRequest : Entity<Guid>
+public class ChangeRequest : AuditableEntity<Guid>
 {
     public Guid ProjectId { get; set; }
-    public Guid RequestedById { get; set; }
     public string Title { get; set; } = default!;
+    public string Description { get; set; } = default!;
     public string Category { get; set; } = default!; // FeatureEnhancement, RequirementChange, TechnicalChange, SecurityChange, ComplianceChange
     public int EstimatedHours { get; set; }
     public string CostImpact { get; set; } = default!; // low, medium, high, critical

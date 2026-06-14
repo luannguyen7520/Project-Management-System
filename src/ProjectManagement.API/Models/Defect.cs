@@ -2,13 +2,13 @@ using ProjectManagement.API.Models.Abstraction;
 
 namespace ProjectManagement.API.Models;
 
-public class Defect : Entity<Guid>
+public class Defect : AuditableEntity<Guid>
 {
     public Guid ProjectId { get; set; }
     public Guid ReleaseId { get; set; }
-    public Guid ReporterId { get; set; }
     public Guid? AssigneeId { get; set; }
     public string Title { get; set; } = default!;
+    public string Description { get; set; } = default!;
     public string Severity { get; set; } = default!; // Low, Medium, High, Critical
     public string Priority { get; set; } = default!; // Low, Medium, High, Critical
     public string Environment { get; set; } = default!; // Development, Testing, Staging, Production

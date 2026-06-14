@@ -1,8 +1,11 @@
+using System;
+
 namespace ProjectManagement.API.Models.Abstraction;
 
-public interface IAuditableEntity
+public abstract class AuditableEntity<T> : IEntity<T>, IAuditableEntity
 {
-    public DateTime CreatedAt { get; set; }
+    public T Id { get; set; } = default!;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; }
     public DateTime? DeletedAt { get; set; }
     public Guid CreatedById { get; set; }
