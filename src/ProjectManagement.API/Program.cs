@@ -3,6 +3,8 @@ using Asp.Versioning;
 using Microsoft.EntityFrameworkCore;
 
 using ProjectManagement.API.Infrastructure;
+using ProjectManagement.API.Infrastructure.Interfaces;
+using ProjectManagement.API.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,8 @@ builder.Services.AddDbContext<PMSystemDbContext>(options =>
 {
    options.UseNpgsql(builder.Configuration.GetConnectionString("PMSystemDatabase")); 
 });
+
+builder.Services.AddScoped<IWorkspaceRepository, WorkspaceRepository>();
 
 var app = builder.Build();
 
