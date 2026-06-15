@@ -2,6 +2,8 @@ using Asp.Versioning;
 
 using Microsoft.EntityFrameworkCore;
 
+using ProjectManagement.API.Application.Interfaces;
+using ProjectManagement.API.Application.Services;
 using ProjectManagement.API.Infrastructure;
 using ProjectManagement.API.Infrastructure.Interfaces;
 using ProjectManagement.API.Infrastructure.Repositories;
@@ -33,6 +35,7 @@ builder.Services.AddDbContext<PMSystemDbContext>(options =>
 });
 
 builder.Services.AddScoped<IWorkspaceRepository, WorkspaceRepository>();
+builder.Services.AddScoped<IWorkspaceService, WorkspaceService>();
 
 var app = builder.Build();
 
