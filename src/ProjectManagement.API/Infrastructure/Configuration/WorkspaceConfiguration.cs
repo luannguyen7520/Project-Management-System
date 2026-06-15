@@ -18,5 +18,8 @@ public class WorkspaceConfiguration : IEntityTypeConfiguration<Workspace>
                 l => l.HasOne(wm => wm.Workspace).WithMany(w => w.WorkspaceMembers).HasForeignKey(wm => wm.WorkspaceId).HasPrincipalKey(w => w.Id),
                 j => j.HasKey(wm => new {wm.WorkspaceId, wm.MemberId})
             );
+
+        builder.HasIndex(w => w.Name)
+            .IsUnique();
     }
 }

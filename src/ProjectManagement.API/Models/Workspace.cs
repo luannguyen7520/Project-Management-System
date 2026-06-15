@@ -6,7 +6,7 @@ public class Workspace : AuditableEntity<Guid>
 {
     public string Name { get; set; } = default!;
     public string Description { get; set; } = default!;
-
+    public bool IsPrivate { get; set; }
 
     #region Member relationships
     public List<Member> Members { get; set; } = [];
